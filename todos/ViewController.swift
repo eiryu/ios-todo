@@ -52,12 +52,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.deselectRow(at: indexPath, animated: true)
         
         let todo = todos[indexPath.row]
+        let text = todo.name
         // トグルで切り替える
-        let text = tableView.cellForRow(at: indexPath)?.textLabel?.text
         if todo.done {
-            setNormalStyle(tableView.cellForRow(at: indexPath)!, text!)
+            setNormalStyle(tableView.cellForRow(at: indexPath)!, text)
         } else {
-            setDoneStyle(tableView.cellForRow(at: indexPath)!, text!)
+            setDoneStyle(tableView.cellForRow(at: indexPath)!, text)
         }
         todos[indexPath.row] = (todo.name, !todo.done)
     }
